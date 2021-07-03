@@ -12,7 +12,7 @@ parser.add_argument('-p', '--postcode', required=True,
 args = parser.parse_args()
 
 checker = ORChecker()
-query = checker.query(args.postcode, args.property_number)
+query = checker.query_address(args.postcode, args.property_number, asJSON=True)
 data = json.loads(query)
 
 print(json.dumps(data, indent=4, sort_keys=True))
