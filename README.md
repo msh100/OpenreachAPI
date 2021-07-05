@@ -7,7 +7,7 @@ A library and CLI to query the Openreach wholesale API.
 
 ```bash
 $ pip install --no-cache-dir -r requirements.txt
-$ python3 cli.py -n 10 -p SW1A2AA
+$ python3 cli.py -n 10 -p SW1A2AA --openreach
 {
     "addressMismatch": true,
     "addressObjectList": [
@@ -23,7 +23,7 @@ $ python3 cli.py -n 10 -p SW1A2AA
 ```bash
 $ # With Docker
 $ docker build -t msh100/openreachapi .
-$ docker run --rm msh100/openreachapi:latest -n 10 -p SW1A2AA
+$ docker run --rm msh100/openreachapi:latest -n 10 -p SW1A2AA --openreach
 {
     "addressMismatch": true,
     "addressObjectList": [
@@ -37,7 +37,7 @@ $ docker run --rm msh100/openreachapi:latest -n 10 -p SW1A2AA
 ```
 
 ```python
-from openreach import ORChecker
+from lib import ORChecker
 
 checker = ORChecker()
 query = checker.query("SW1A2AA", "10")

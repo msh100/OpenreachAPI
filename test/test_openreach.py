@@ -2,7 +2,7 @@ import pytest
 
 import sys
 sys.path.append(".")
-from openreach import ORChecker
+from lib.openreach import ORChecker
 
 with open("test/main.2021-06-30.js", "r") as file:
     ORJavascript = file.read()
